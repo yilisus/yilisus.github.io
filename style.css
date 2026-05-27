@@ -1,0 +1,36 @@
+/* Esto cambia el fondo de la página y la letra */
+body {
+    background-color: #f5efe6; /* Un color crema suave y romántico */
+    font-family: 'Arial', sans-serif;
+    color: #4a3f35; /* Marrón oscuro para que no sea un negro chillón */
+    text-align: center; /* Centra todo el contenido */
+    padding: 50px 20px;
+}
+
+/* Estilo para el título principal */
+h1 {
+    font-size: 2.5rem;
+    color: #b85c5c; /* Un tono rojizo/rosa viejo muy bonito */
+    margin-bottom: 10px;
+}
+
+/* Estilo para el texto de abajo */
+p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+/* Estilo para la foto (¡aquí está el truco!) */
+img {
+    border-radius: 15px; /* Bordes redondeados para que se vea moderna */
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15); /* Una sombra suave que le da profundidad */
+    border: 8px solid white; /* Un marco blanco, tipo foto Polaroid antigua */
+    transition: transform 0.3s ease; /* Para que se mueva suave al pasar el mouse */
+}
+
+/* Un pequeño efecto mágico: cuando pasen el mouse sobre la foto, se inclinará un poquito */
+img:hover {
+    transform: scale(1.03) rotate(2deg); 
+    cursor: pointer;
+    }
