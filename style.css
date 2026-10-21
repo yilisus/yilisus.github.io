@@ -1,295 +1,260 @@
-:root {
-    --bg-color: #fdf6f0;
-    --card-bg: #ffffff;
-    --primary-color: #d96b75;
-    --primary-hover: #b85c5c;
-    --text-main: #4a3f35;
-    --text-muted: #7d6e63;
-    --accent-border: #f0dcd0;
-    --shadow-soft: 0 10px 30px rgba(184, 92, 92, 0.08);
-    --shadow-hover: 0 18px 35px rgba(184, 92, 92, 0.18);
-}
-
-body.dark-mode {
-    --bg-color: #1e1b18;
-    --card-bg: #2a2521;
-    --primary-color: #e88890;
-    --primary-hover: #f3a3a9;
-    --text-main: #f0e6df;
-    --text-muted: #c5b8ae;
-    --accent-border: #3d352e;
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-hover: 0 18px 35px rgba(232, 136, 144, 0.2);
-}
-
+/* RESET GENERAL */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
     font-family: 'Poppins', sans-serif;
-    color: var(--text-main);
-    line-height: 1.6;
-    padding-bottom: 60px;
-    overflow-x: hidden;
-    background-image: radial-gradient(#f0dcd0 0.8px, transparent 0.8px);
-    background-size: 24px 24px;
+    background-color: #fcf4f6;
+    color: #4a3d42;
     transition: background-color 0.4s ease, color 0.4s ease;
+    padding-bottom: 50px;
 }
 
+/* MODO NOCHE */
 body.dark-mode {
-    background-image: radial-gradient(#3d352e 0.8px, transparent 0.8px);
+    background-color: #1a1618;
+    color: #f1e4e8;
 }
 
-/* Botones Superiores Flotantes */
+body.dark-mode .fecha-block,
+body.dark-mode .foto-card,
+body.dark-mode .love-counter,
+body.dark-mode .carta-contenido,
+body.dark-mode .sobre {
+    background-color: #282124;
+    color: #f1e4e8;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* BOTONES SUPERIORES (MÚSICA Y MODO NOCHE) */
 .audio-player {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
     display: flex;
     gap: 10px;
 }
 
 .btn-audio, .btn-theme {
-    background: var(--card-bg);
-    color: var(--text-main);
-    border: 1px solid var(--accent-border);
-    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    border: 1px solid #ffb6c1;
+    padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.85rem;
-    box-shadow: var(--shadow-soft);
-    transition: all 0.3s ease;
     font-weight: 500;
+    color: #d81b60;
+    transition: all 0.3s ease;
 }
 
-.btn-audio.playing {
-    background: #ff758c;
+.btn-audio:hover, .btn-theme:hover {
+    background: #ffb6c1;
     color: white;
 }
 
-/* Encabezado */
+/* ENCABEZADO */
 .header {
     text-align: center;
-    padding: 70px 20px 30px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 70px 20px 20px;
 }
 
-.header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: var(--primary-hover);
-    margin-bottom: 12px;
-    font-weight: 600;
+h1, .fecha-header h2 {
+    font-family: 'Cormorant Garamond', serif !important;
+    color: #d81b60;
+    margin-bottom: 5px;
+}
+
+body.dark-mode h1, body.dark-mode .fecha-header h2 {
+    color: #ff80ab;
 }
 
 .subtitulo {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #886a73;
+    margin-bottom: 20px;
 }
 
+.nota-actualizacion {
+    font-size: 0.9rem;
+    color: #b0124a;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* CONTADOR DE TIEMPO */
 .love-counter {
-    background: var(--card-bg);
+    background: white;
     display: inline-block;
     padding: 12px 25px;
-    border-radius: 30px;
-    border: 1px solid var(--accent-border);
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.12);
+    margin-top: 10px;
 }
 
 .counter-label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    display: block;
+    font-size: 0.9rem;
+    color: #886a73;
 }
 
 .counter-timer {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #d81b60;
+    margin-top: 5px;
 }
 
-.nota-actualizacion {
-    display: inline-block;
-    background: #f8e1db;
-    color: #b85c5c;
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
+/* BOTÓN LLUVIA DE AMOR */
 .btn-corazones {
-    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    background: #d81b60;
     color: white;
     border: none;
     padding: 10px 22px;
     border-radius: 25px;
     font-size: 0.95rem;
     cursor: pointer;
-    font-weight: 500;
-    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.3);
-    transition: transform 0.2s ease;
+    transition: 0.3s;
 }
 
 .btn-corazones:hover {
+    background: #b0124a;
     transform: scale(1.05);
 }
 
-/* Filtros */
+/* FILTROS POR FECHA */
 .filtros-container {
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin: 25px auto;
+    max-width: 90%;
     flex-wrap: wrap;
-    margin-bottom: 35px;
-    padding: 0 20px;
 }
 
 .filtro-btn {
-    background: var(--card-bg);
-    border: 1px solid var(--accent-border);
-    color: var(--text-muted);
+    background: white;
+    border: 1px solid #ffd1dc;
     padding: 8px 18px;
     border-radius: 20px;
+    color: #886a73;
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .filtro-btn.active, .filtro-btn:hover {
-    background: var(--primary-color);
+    background: #d81b60;
     color: white;
-    border-color: var(--primary-color);
+    border-color: #d81b60;
 }
 
-.album-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* CARTA SECRETA */
 .sobre-container {
     max-width: 600px;
-    margin: 0 auto 35px;
+    margin: 0 auto 30px;
     text-align: center;
 }
 
 .sobre {
-    background: #fff3f0;
-    color: #b85c5c;
-    border: 2px dashed #f0b8b0;
+    background: #ffe4e8;
+    border: 2px dashed #ffb6c1;
     padding: 15px;
-    border-radius: 16px;
+    border-radius: 15px;
     cursor: pointer;
     font-weight: 500;
+    color: #d81b60;
+    transition: 0.3s;
+}
+
+.sobre:hover {
+    background: #ffd1dc;
 }
 
 .carta-contenido {
     display: none;
-    background: var(--card-bg);
+    background: white;
     padding: 25px;
-    border-radius: 16px;
+    border-radius: 20px;
     margin-top: 15px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--accent-border);
-    font-family: 'Caveat', cursive;
-    font-size: 1.4rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.6rem !important;
+}
+
+/* BLOQUES DE ÁLBUM */
+.album-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .fecha-block {
-    background: var(--card-bg);
-    border-radius: 24px;
-    padding: 35px 30px;
-    margin-bottom: 45px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--accent-border);
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .fecha-header {
-    margin-bottom: 25px;
-    border-left: 4px solid var(--primary-color);
-    padding-left: 18px;
-    text-align: left;
-}
-
-.fecha-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: var(--primary-hover);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .historia-texto {
-    font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
-    color: var(--text-main);
-    margin-top: 6px;
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.5rem !important;
+    color: #664d55;
 }
 
+body.dark-mode .historia-texto {
+    color: #e0cad1;
+}
+
+/* GALERÍA DE FOTOS */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
 .foto-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 12px 12px 20px 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    border: 1px solid #f2e6df;
-    transition: all 0.35s ease;
+    background: #fff;
+    border: 1px solid #f2e1e5;
+    padding: 10px 10px 18px 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     cursor: pointer;
-}
-
-body.dark-mode .foto-card {
-    background: #332d28;
-    border-color: #443c35;
+    transition: transform 0.3s ease;
+    text-align: center;
 }
 
 .foto-card:hover {
-    transform: translateY(-8px) rotate(1.5deg);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
 }
 
 .foto-card img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 10px;
-    display: block;
+    border-radius: 8px;
 }
 
 .polaroid-caption {
-    font-family: 'Caveat', cursive;
-    text-align: center;
-    font-size: 1.25rem;
-    color: var(--text-muted);
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.3rem !important;
     margin-top: 10px;
+    color: #4a3d42;
 }
 
-.corazon-animado {
-    position: fixed;
-    bottom: -20px;
-    font-size: 1.5rem;
-    pointer-events: none;
-    animation: flotarUp linear forwards;
-    z-index: 999;
+body.dark-mode .polaroid-caption {
+    color: #f1e4e8;
 }
 
-@keyframes flotarUp {
-    0% { transform: translateY(0) scale(0.8); opacity: 1; }
-    100% { transform: translateY(-105vh) scale(1.3); opacity: 0; }
-}
-
+/* LIGHTBOX */
 .lightbox {
     display: none;
     position: fixed;
@@ -297,18 +262,16 @@ body.dark-mode .foto-card {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
     justify-content: center;
     align-items: center;
 }
 
 .lightbox-content {
-    max-width: 88%;
-    max-height: 82vh;
-    border-radius: 12px;
-    border: 4px solid white;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
 }
 
 .lightbox-close {
@@ -316,26 +279,101 @@ body.dark-mode .foto-card {
     top: 20px;
     right: 30px;
     color: white;
-    font-size: 2.5rem;
+    font-size: 40px;
     cursor: pointer;
 }
 
 .lightbox-nav {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     color: white;
     font-size: 2.5rem;
     cursor: pointer;
-    padding: 15px;
+    padding: 20px;
     user-select: none;
 }
 
-.nav-prev { left: 20px; }
-.nav-next { right: 20px; }
+.nav-prev { left: 15px; }
+.nav-next { right: 15px; }
 
 footer {
     text-align: center;
-    padding: 40px 20px 20px;
-    color: var(--text-muted);
+    padding: 20px;
+    color: #886a73;
+    font-size: 0.9rem;
+}
+
+/* ANIMACIÓN CORAZONES */
+.corazon-animado {
+    position: fixed;
+    top: -20px;
+    font-size: 24px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: caer linear forwards;
+}
+
+@keyframes caer {
+    to {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   OPTIMIZACIÓN RESPONSIVA MÓVIL (ANDROID / IOS)
+   ========================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 80px 15px 15px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .love-counter {
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    .counter-timer {
+        font-size: 1.05rem;
+    }
+
+    .filtros-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 10px 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .filtros-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filtro-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        font-size: 0.85rem;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .foto-card {
+        padding: 8px 8px 14px 8px;
+    }
+
+    .foto-card img {
+        height: 160px !important;
+    }
+
+    .polaroid-caption {
+        font-size: 1.15rem !important;
+    }
 }
