@@ -2,63 +2,104 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestro Álbum Secreto</title>
-    <link rel="stylesheet" href="style.css"
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Nuestros Momentos mas Preciados mi corazon❤️</h1>
-    <p>Desde el inicio hasta el final mi corazon...</p>
-    <p2>esto se actualizara semanalmente mi vida te recontra
-        adoro mi bombon,
-    </p2>
-    <p3> mira mi amor esta foto la sacamos en el primer dia que
-        nos vimos, jsjsj aparecemos todo rancios pero es nuestro comienzo, como un gran amor
-    </p3>
+    <header class="header">
+        <h1>Nuestros Momentos más Preciados, mi corazón ❤️</h1>
+        <p class="subtitulo">Desde el inicio hasta el final mi corazón...</p>
+        <div class="nota-actualizacion">
+            Esto se actualizará semanalmente mi vida, te recontra adoro mi bombón 💕
+        </div>
+    </header>
 
-    <!-- Aquí van a ir nuestras fotos más adelante -->
-     <h2>01/04/2026</h2>
-<image src="imagenes/photo_2026-05-25_10-51-52 (2).jpg" width="400">
-</image>
-<image src="imagenes/photo_2026-05-25_10-51-52.jpg" width="400">
-</image>
-      <h2>02/04/2026</h2>
-<image src="imagenes/photo_1_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<image src="imagenes/photo_2_2026-05-25_11-07-08.jpg" width="400">    
-</image>
-<image src="imagenes/photo_3_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<image src="imagenes/photo_4_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<image src="imagenes/photo_5_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<image src="imagenes/photo_6_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<image src="imagenes/photo_7_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<image src="imagenes/photo_8_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<image src="imagenes/photo_9_2026-05-25_11-07-08.jpg" width="400">
-</image>
-<h2>03/02/2026</h2>
-<p1>aqui unas fotitos recopilatorias💕
-<image src="imagenes/photo_10_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-<image src="imagenes/photo_9_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-<image src="imagenes/photo_11_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-<image src="imagenes/photo_12_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-<image src="imagenes/photo_13_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-<image src="imagenes/photo_14_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-<image src="imagenes/photo_15_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-<image src="imagenes/photo_16_2026-05-25_13-39-42.jpg" width="400">    
-</image>
-</p1>
+    <main class="album-container">
+
+        <!-- FECHA 1 -->
+        <section class="fecha-block">
+            <div class="fecha-header">
+                <h2>01/04/2026</h2>
+                <p class="historia-texto">Mira mi amor esta foto la sacamos en el primer día que nos vimos, jsjsj aparecemos todos rancios pero es nuestro comienzo, como un gran amor.</p>
+            </div>
+            <div class="galeria">
+                <div class="foto-card" onclick="abrirImagen(this)">
+                    <img src="imagenes/photo_2026-05-25_10-51-52 (2).jpg" alt="Nuestro primer día">
+                    <div class="polaroid-caption">Nuestro primer día ✨</div>
+                </div>
+                <div class="foto-card" onclick="abrirImagen(this)">
+                    <img src="imagenes/photo_2026-05-25_10-51-52.jpg" alt="Nuestro comienzo">
+                    <div class="polaroid-caption">El comienzo ❤️</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FECHA 2 -->
+        <section class="fecha-block">
+            <div class="fecha-header">
+                <h2>02/04/2026</h2>
+            </div>
+            <div class="galeria">
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_1_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Momento especial</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_2_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Contigo todo es mejor</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_3_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Sonrisas juntos</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_4_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Mi lugar favorito</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_5_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Un día bonito</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_6_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Recuerdos inolvidables</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_7_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Amor mío</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_8_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Juntos siempre</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_9_2026-05-25_11-07-08.jpg" alt="Foto"><div class="polaroid-caption">Mi persona favorita</div></div>
+            </div>
+        </section>
+
+        <!-- FECHA 3 -->
+        <section class="fecha-block">
+            <div class="fecha-header">
+                <h2>03/02/2026</h2>
+                <p class="historia-texto">Aquí unas fotitos recopilatorias 💕</p>
+            </div>
+            <div class="galeria">
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_10_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Recopilatoria 💕</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_9_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Momentos mágicos</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_11_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Tú y yo</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_12_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Coleccionando recuerdos</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_13_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Siempre a tu lado</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_14_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Fotito especial</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_15_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Mi corazón</div></div>
+                <div class="foto-card" onclick="abrirImagen(this)"><img src="imagenes/photo_16_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Para la eternidad</div></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Hecho con todo mi amor para ti ❤️</p>
+    </footer>
+
+    <!-- Visor de Fotos en Pantalla Completa (Lightbox) -->
+    <div id="lightbox" class="lightbox" onclick="cerrarImagen()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Vista ampliada">
+    </div>
+
+    <script>
+        function abrirImagen(card) {
+            const imgUrl = card.querySelector('img').src;
+            document.getElementById('lightbox-img').src = imgUrl;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function cerrarImagen() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+
 </body>
 </html>
