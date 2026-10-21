@@ -10,6 +10,18 @@
     --shadow-hover: 0 18px 35px rgba(184, 92, 92, 0.18);
 }
 
+body.dark-mode {
+    --bg-color: #1e1b18;
+    --card-bg: #2a2521;
+    --primary-color: #e88890;
+    --primary-hover: #f3a3a9;
+    --text-main: #f0e6df;
+    --text-muted: #c5b8ae;
+    --accent-border: #3d352e;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 18px 35px rgba(232, 136, 144, 0.2);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,12 +37,45 @@ body {
     overflow-x: hidden;
     background-image: radial-gradient(#f0dcd0 0.8px, transparent 0.8px);
     background-size: 24px 24px;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Encabezado Principal */
+body.dark-mode {
+    background-image: radial-gradient(#3d352e 0.8px, transparent 0.8px);
+}
+
+/* Botones Superiores Flotantes */
+.audio-player {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-audio, .btn-theme {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--accent-border);
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-audio.playing {
+    background: #ff758c;
+    color: white;
+}
+
+/* Encabezado */
 .header {
     text-align: center;
-    padding: 60px 20px 40px;
+    padding: 70px 20px 30px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -39,37 +84,127 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
     color: var(--primary-hover);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: 600;
 }
 
 .subtitulo {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-muted);
     font-style: italic;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.love-counter {
+    background: var(--card-bg);
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 1px solid var(--accent-border);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 15px;
+}
+
+.counter-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.counter-timer {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 .nota-actualizacion {
     display: inline-block;
     background: #f8e1db;
-    color: var(--primary-hover);
+    color: #b85c5c;
     padding: 8px 20px;
     border-radius: 30px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    margin-top: 10px;
-    box-shadow: 0 4px 12px rgba(217, 107, 117, 0.12);
 }
 
-/* Contenedor del Álbum */
+.btn-corazones {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.btn-corazones:hover {
+    transform: scale(1.05);
+}
+
+/* Filtros */
+.filtros-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    padding: 0 20px;
+}
+
+.filtro-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-border);
+    color: var(--text-muted);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn.active, .filtro-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
 .album-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Bloque por Fecha */
+.sobre-container {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.sobre {
+    background: #fff3f0;
+    color: #b85c5c;
+    border: 2px dashed #f0b8b0;
+    padding: 15px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.carta-contenido {
+    display: none;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    margin-top: 15px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--accent-border);
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+}
+
 .fecha-block {
     background: var(--card-bg);
     border-radius: 24px;
@@ -90,44 +225,39 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     color: var(--primary-hover);
-    letter-spacing: 0.5px;
 }
 
 .historia-texto {
     font-family: 'Caveat', cursive;
     font-size: 1.5rem;
-    color: #5a4b41;
+    color: var(--text-main);
     margin-top: 6px;
-    line-height: 1.4;
 }
 
-/* Cuadrícula de Fotos (Grid) */
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 25px;
 }
 
-/* Tarjeta tipo Polaroid */
 .foto-card {
     background: #ffffff;
     border-radius: 16px;
     padding: 12px 12px 20px 12px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     border: 1px solid #f2e6df;
-    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.35s ease;
     cursor: pointer;
-    position: relative;
+}
+
+body.dark-mode .foto-card {
+    background: #332d28;
+    border-color: #443c35;
 }
 
 .foto-card:hover {
     transform: translateY(-8px) rotate(1.5deg);
     box-shadow: var(--shadow-hover);
-    border-color: #f7d5cc;
-}
-
-.foto-card:nth-child(even):hover {
-    transform: translateY(-8px) rotate(-1.5deg);
 }
 
 .foto-card img {
@@ -141,20 +271,25 @@ body {
 .polaroid-caption {
     font-family: 'Caveat', cursive;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
     margin-top: 10px;
 }
 
-/* Pie de página */
-footer {
-    text-align: center;
-    padding: 40px 20px 20px;
-    color: var(--text-muted);
-    font-size: 0.95rem;
+.corazon-animado {
+    position: fixed;
+    bottom: -20px;
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: flotarUp linear forwards;
+    z-index: 999;
 }
 
-/* Visor de Imagen en Pantalla Completa (Lightbox) */
+@keyframes flotarUp {
+    0% { transform: translateY(0) scale(0.8); opacity: 1; }
+    100% { transform: translateY(-105vh) scale(1.3); opacity: 0; }
+}
+
 .lightbox {
     display: none;
     position: fixed;
@@ -162,40 +297,45 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(6px);
     z-index: 1000;
     justify-content: center;
     align-items: center;
 }
 
 .lightbox-content {
-    max-width: 90%;
-    max-height: 85vh;
+    max-width: 88%;
+    max-height: 82vh;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
     border: 4px solid white;
 }
 
 .lightbox-close {
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: 30px;
     color: white;
     font-size: 2.5rem;
     cursor: pointer;
-    font-weight: bold;
 }
 
-@media (max-width: 600px) {
-    .header h1 { font-size: 2.1rem; }
-    .fecha-block { padding: 20px 15px; }
-    .galeria { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
-    .foto-card img { height: 180px; }
-}
-
-/* Un pequeño efecto mágico: cuando pasen el mouse sobre la foto, se inclinará un poquito */
-img:hover {
-    transform: scale(1.03) rotate(2deg); 
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 2.5rem;
     cursor: pointer;
-    }
+    padding: 15px;
+    user-select: none;
+}
+
+.nav-prev { left: 20px; }
+.nav-next { right: 20px; }
+
+footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    color: var(--text-muted);
+}
