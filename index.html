@@ -7,7 +7,7 @@
     <!-- Fuentes de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Archivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -42,12 +42,15 @@
         </div>
     </header>
 
-    <!-- Filtro / Menú rápido por fechas -->
+    <!-- Filtro / Menú rápido por fechas (en orden cronológico estricto) -->
     <div class="filtros-container">
         <button class="filtro-btn active" data-categoria="todas">Todas las fotos</button>
+        <button class="filtro-btn" data-categoria="recopilatorias">03/02/2026 (Vacaciones)</button>
         <button class="filtro-btn" data-categoria="01-04-2026">01/04/2026 (Comienzo)</button>
         <button class="filtro-btn" data-categoria="02-04-2026">02/04/2026</button>
-        <button class="filtro-btn" data-categoria="recopilatorias">Recopilatorias y Vacaciones</button>
+        <button class="filtro-btn" data-categoria="04-04-2026">04/04/2026</button>
+        <button class="filtro-btn" data-categoria="05-04-2026">05/04/2026</button>
+        <button class="filtro-btn" data-categoria="06-04-2026">06/04/2026</button>
     </div>
 
     <main class="album-container">
@@ -63,7 +66,25 @@
             </div>
         </div>
 
-        <!-- FECHA 1 -->
+        <!-- FECHA 1: 03/02/2026 (RECOPILATORIO & VACACIONES) -->
+        <section class="fecha-block" data-fecha="recopilatorias">
+            <div class="fecha-header">
+                <h2>03/02/2026 — Recopilatorio & Vacaciones 🌴</h2>
+                <p class="historia-texto">Aquí unas fotitos recopilatorias y de las vacaciones de mi mujer hermosa 💕</p>
+            </div>
+            <div class="galeria">
+                <div class="foto-card"><img src="imagenes/photo_10_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Recopilatoria 💕</div></div>
+                <div class="foto-card"><img src="imagenes/photo_9_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Momentos mágicos</div></div>
+                <div class="foto-card"><img src="imagenes/photo_11_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Tú y yo</div></div>
+                <div class="foto-card"><img src="imagenes/photo_12_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Vacaciones bellas ☀️</div></div>
+                <div class="foto-card"><img src="imagenes/photo_13_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Siempre a tu lado</div></div>
+                <div class="foto-card"><img src="imagenes/photo_14_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Mi muñeca preciosa</div></div>
+                <div class="foto-card"><img src="imagenes/photo_15_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Mi corazón</div></div>
+                <div class="foto-card"><img src="imagenes/photo_16_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Para la eternidad</div></div>
+            </div>
+        </section>
+
+        <!-- FECHA 2: 01/04/2026 -->
         <section class="fecha-block" data-fecha="01-04-2026">
             <div class="fecha-header">
                 <h2>01/04/2026</h2>
@@ -81,7 +102,7 @@
             </div>
         </section>
 
-        <!-- FECHA 2 -->
+        <!-- FECHA 3: 02/04/2026 -->
         <section class="fecha-block" data-fecha="02-04-2026">
             <div class="fecha-header">
                 <h2>02/04/2026</h2>
@@ -99,21 +120,65 @@
             </div>
         </section>
 
-        <!-- FECHA 3 -->
-        <section class="fecha-block" data-fecha="recopilatorias">
+        <!-- FECHA 4: 04/04/2026 -->
+        <section class="fecha-block" data-fecha="04-04-2026">
             <div class="fecha-header">
-                <h2>03/02/2026 — Recopilatorio & Vacaciones 🌴</h2>
-                <p class="historia-texto">Aquí unas fotitos recopilatorias y de las vacaciones de mi mujer hermosa 💕</p>
+                <h2>04/04/2026</h2>
+                <p class="historia-texto">Momentos inolvidables a tu lado, mi vida. Cada risa y cada ocurrencia contigo hacen que todo sea perfecto ❤️</p>
             </div>
             <div class="galeria">
-                <div class="foto-card"><img src="imagenes/photo_10_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Recopilatoria 💕</div></div>
-                <div class="foto-card"><img src="imagenes/photo_9_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Momentos mágicos</div></div>
-                <div class="foto-card"><img src="imagenes/photo_11_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Tú y yo</div></div>
-                <div class="foto-card"><img src="imagenes/photo_12_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Vacaciones bellas ☀️</div></div>
-                <div class="foto-card"><img src="imagenes/photo_13_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Siempre a tu lado</div></div>
-                <div class="foto-card"><img src="imagenes/photo_14_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Mi muñeca preciosa</div></div>
-                <div class="foto-card"><img src="imagenes/photo_15_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Mi corazón</div></div>
-                <div class="foto-card"><img src="imagenes/photo_16_2026-05-25_13-39-42.jpg" alt="Recopilatoria"><div class="polaroid-caption">Para la eternidad</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320696.jpg" alt="Foto 04/04"><div class="polaroid-caption">Tu carita hermosa ✨</div></div>
+                <div class="foto-card"><img src="imagenes/51007515268163206962.jpg" alt="Foto 04/04"><div class="polaroid-caption">Disfrutando el momento 🧃</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320698.jpg" alt="Foto 04/04"><div class="polaroid-caption">Paz y amor ✌️</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320699.jpg" alt="Foto 04/04"><div class="polaroid-caption">Mi persona favorita 💕</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320700.jpg" alt="Foto 04/04"><div class="polaroid-caption">Esas sonrisas mías 🤪</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320701.jpg" alt="Foto 04/04"><div class="polaroid-caption">Tan bella como siempre</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320702.jpg" alt="Foto 04/04"><div class="polaroid-caption">Haciendo muecas 😋</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320703.jpg" alt="Foto 04/04"><div class="polaroid-caption">Juntos tú y yo ❤️</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320704.jpg" alt="Foto 04/04"><div class="polaroid-caption">Inseparables 💖</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320705.jpg" alt="Foto 04/04"><div class="polaroid-caption">Un recuerdo único ✨</div></div>
+            </div>
+        </section>
+
+        <!-- FECHA 5: 05/04/2026 -->
+        <section class="fecha-block" data-fecha="05-04-2026">
+            <div class="fecha-header">
+                <h2>05/04/2026</h2>
+                <p class="historia-texto">Mi primera cita con mi futura esposa y mi suegra 💕🍕 Un día inolvidable compartiendo juntos en familia.</p>
+            </div>
+            <div class="galeria">
+                <div class="foto-card"><img src="imagenes/5100751526816320699_2.jpg" alt="Foto 05/04"><div class="polaroid-caption">Miradas cómplices ✨</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320710.jpg" alt="Foto 05/04"><div class="polaroid-caption">Esa carita linda 💖</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320711.jpg" alt="Foto 05/04"><div class="polaroid-caption">Bella como siempre 🥰</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320712.jpg" alt="Foto 05/04"><div class="polaroid-caption">Ocurrencias juntos 🤪</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320714.jpg" alt="Foto 05/04"><div class="polaroid-caption">Haciendo de las mías ✌️</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320715.jpg" alt="Foto 05/04"><div class="polaroid-caption">Siempre cerquita de ti ❤️</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320716.jpg" alt="Foto 05/04"><div class="polaroid-caption">Mi lugar favorito 💕</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320718.jpg" alt="Foto 05/04"><div class="polaroid-caption">Cena en familia con mi suegra y mi vida 🍕❤️</div></div>
+            </div>
+        </section>
+
+        <!-- FECHA 6: 06/04/2026 -->
+        <section class="fecha-block" data-fecha="06-04-2026">
+            <div class="fecha-header">
+                <h2>06/04/2026</h2>
+                <p class="historia-texto">Entre abrazos, risas y locuras contigo la vida es mil veces mejor. ¡Te amo, mi niña hermosa! ✨❤️</p>
+            </div>
+            <div class="galeria">
+                <div class="foto-card"><img src="imagenes/5100751526816320722.jpg" alt="Foto 06/04"><div class="polaroid-caption">Sonrisas inolvidables ✨</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320723.jpg" alt="Foto 06/04"><div class="polaroid-caption">Toda una reina 💖</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320724.jpg" alt="Foto 06/04"><div class="polaroid-caption">Siempre abrazaditos 🥰</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320725.jpg" alt="Foto 06/04"><div class="polaroid-caption">Pegaditos los dos ❤️</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320726.jpg" alt="Foto 06/04"><div class="polaroid-caption">Un abrazo sincero 💕</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320727.jpg" alt="Foto 06/04"><div class="polaroid-caption">Apegaditos como siempre 💖</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320729.jpg" alt="Foto 06/04"><div class="polaroid-caption">Mis momentos favoritos ✌️</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320730.jpg" alt="Foto 06/04"><div class="polaroid-caption">Un besito para mi amor 😘</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320731.jpg" alt="Foto 06/04"><div class="polaroid-caption">Haciendo muecas juntos 🤪</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320732.jpg" alt="Foto 06/04"><div class="polaroid-caption">Complicidad pura ✨</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320734.jpg" alt="Foto 06/04"><div class="polaroid-caption">Paz a tu lado ❤️</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320740.jpg" alt="Foto 06/04"><div class="polaroid-caption">Mi personita especial 💖</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320720.jpg" alt="Foto 06/04"><div class="polaroid-caption">Un invitado especial 🤪</div></div>
+                <div class="foto-card"><img src="imagenes/5100751526816320721.jpg" alt="Foto 06/04"><div class="polaroid-caption">Modo afro divertido 🦁</div></div>
             </div>
         </section>
 
@@ -133,9 +198,5 @@
 
     <!-- Archivo JS externo -->
     <script src="script.js"></script>
-</body>
-</html>
-    </script>
-
 </body>
 </html>
