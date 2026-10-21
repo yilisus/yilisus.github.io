@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     musicText.innerText = 'Música: ON 🎶';
                     musicBtn.classList.add('playing');
                 }).catch(err => {
-                    console.log("El navegador bloqueó la reproducción automática: " + err);
+                    console.log("El navegador requirió interacción del usuario: " + err);
                 });
             } else {
                 bgMusic.pause();
@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. CONTADOR EN TIEMPO REAL VIVO (Días, Horas, Minutos y Segundos)
-    // Cambia la fecha de inicio por la de ustedes si lo deseas (Formato: AAAA-MM-DDTHH:MM:SS)
+    // 3. CONTADOR VIVO EN TIEMPO REAL (Días, Horas, Minutos y Segundos)
     const fechaInicio = new Date('2026-04-01T00:00:00').getTime();
 
     function actualizarContador() {
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-            // Rellenar con cero a la izquierda para mantener un formato estético (ej. 05s)
             const hrsStr = horas < 10 ? '0' + horas : horas;
             const minStr = minutos < 10 ? '0' + minutos : minutos;
             const segStr = segundos < 10 ? '0' + segundos : segundos;
@@ -60,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Iniciar inmediatamente y actualizar cada 1 segundo (1000 ms)
     actualizarContador();
     setInterval(actualizarContador, 1000);
 
@@ -73,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. LLUVIA DE CORAZONES ANIMADA
+    // 5. LLUVIA DE CORAZONES
     const btnCorazones = document.getElementById('btnCorazones');
     if (btnCorazones) {
         btnCorazones.addEventListener('click', () => {
@@ -109,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 7. VISOR LIGHTBOX DE IMÁGENES CON NAVEGACIÓN
+    // 7. VISOR LIGHTBOX CON NAVEGACIÓN
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeLightbox = document.getElementById('closeLightbox');
